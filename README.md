@@ -32,7 +32,7 @@ docker run --rm --interactive --tty \
 php public/one.php
 ```
 
-Run in Docker
+Docker
 
 ```
 docker run --rm -v $(pwd):/app -w /app php:8.3-cli php public/one.php
@@ -44,15 +44,13 @@ docker run --rm -v $(pwd):/app -w /app php:8.3-cli php public/one.php
 php public/two.php
 ```
 
-Run in Docker
+Docker
 
 ```
 docker run --rm -v $(pwd):/app -w /app php:8.3-cli php public/two.php
 ```
 
 # Tests
-
-Runs tests
 
 ```
 vendor/bin/phpunit
