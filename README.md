@@ -1,6 +1,7 @@
 # Pre-requisites
 
 - PHP 8.3
+- Composer
 
 # Installation
 
@@ -9,6 +10,20 @@ Download the repository
 ```
 git clone git@github.com:drecken/laughing-broccoli.git
 cd laughing-broccoli
+```
+
+## Install dependencies
+
+```
+php composer.phar install
+```
+
+Docker
+
+```
+docker run --rm --interactive --tty \
+  --volume $PWD:/app \
+  composer:2 install
 ```
 
 # Question #1
@@ -37,25 +52,7 @@ docker run --rm -v $(pwd):/app -w /app php:8.3-cli php public/two.php
 
 # Tests
 
-## Pre-requisites
-
-- Composer
-
-## Install dependencies
-
-```
-php composer.phar install
-```
-
-Docker
-
-```
-docker run --rm --interactive --tty \
-  --volume $PWD:/app \
-  composer:2 install
-```
-
-## Run tests
+Runs tests
 
 ```
 vendor/bin/phpunit
