@@ -82,7 +82,9 @@ Docker
 
 ```
 docker run --rm \
---volume $PWD:/app \
---workdir /app \
-php:8.3-cli vendor/bin/phpunit tests
+  --volume "$(pwd)":/app \
+  --workdir /app \
+  php:8.3-cli bash -c "\
+  docker-php-ext-install bcmath && \
+  vendor/bin/phpunit vendor/bin/phpunit tests"
 ```
