@@ -1,7 +1,12 @@
+# Instructions
+
+[Instructions for this project](INSTRUCTIONS.md)
+
 # Pre-requisites
 
 - PHP 8.3
 - Composer
+- bcmath extension
 
 # Installation
 
@@ -48,6 +53,23 @@ Docker
 
 ```
 docker run --rm -v $(pwd):/app -w /app php:8.3-cli php public/two.php
+```
+
+# Question #3
+
+```
+vendor/bin/phpunit tests/QuestionThreeTest.php
+```
+
+Docker
+
+```
+docker run --rm \
+  --volume "$(pwd)":/app \
+  --workdir /app \
+  php:8.3-cli bash -c "\
+  docker-php-ext-install bcmath && \
+  vendor/bin/phpunit tests/QuestionThreeTest.php"
 ```
 
 # Tests

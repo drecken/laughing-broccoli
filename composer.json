@@ -9,5 +9,8 @@
     "psr-4": {
       "Tests\\": "tests/"
     }
+  },
+  "require": {
+    "ext-bcmath": "*"
   }
 }
